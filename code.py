@@ -324,5 +324,11 @@ def main():
             print(f"Question {idx}: no scores recorded.")
         print("-" * 60)
 
+    # >>> Add this block to write the structured output to a file <<<
+    with open("all_results.json", "w", encoding="utf-8") as f:
+        json.dump(all_results, f, indent=2, ensure_ascii=False)
+    print("All detailed results have been written to all_results.json")
+
 if __name__ == "__main__":
     main()
+
